@@ -23,7 +23,7 @@ module.exports = {
             },
             red: {
                 '400': '#EF4E4E',
-                '500': '#AB091E'
+                '600': '#AB091E'
             }
         },
         extend: {}

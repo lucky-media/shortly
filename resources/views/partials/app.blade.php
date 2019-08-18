@@ -19,15 +19,12 @@
 </head>
 
 <body class="font-sans">
-    <div class="container mx-auto bg-white h-20 flex items-center justify-between px-5 lg:px-0 lg:h-16">
-        <div class="text-2xl text-grey-400">shortly</div>
-        <div>
-            <svg class="fill-current h-8 w-8 text-grey-400 lg:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
+    <div class="bg-white absolute top-0 right-0 left-0">
+        <div class="container mx-auto flex items-center h-20 lg:h-16 px-5 lg:px-0">
+            <div class="text-2xl text-grey-400">shortly</div>
         </div>
     </div>
-    <div class="bg-lines">
+    <div class="bg-lines h-screen bg-grey-100">
         @yield('content')
     </div>
 </body>

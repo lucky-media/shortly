@@ -13,3 +13,4 @@
 
 Route::get('/', 'HomeController@index');
 Route::post('/link', 'LinksController@store')->name('link.store');
+Route::get('/{url}', 'LinksController@view');

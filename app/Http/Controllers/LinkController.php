@@ -23,18 +23,23 @@ class LinksController extends Controller
         return $link;
     }
 
-    public function view(Request $request, $url)
+    public function view(Link $link)
     {
-        $link = Link::where('code', $url)->first();
+        // Abort if not found.
+        abort_if($link == null, 404);
 
-        // Return 404 if you cant find the url
-        if ($link == null) {
-            return abort(404);
-        }
-
-        $link->hits = $link->hits + 1;
+        $link->increment('hits');
         $link->save();
 
         return redirect()->to($link->url, 301);
+    }
+
+    public function show(Link $link)
+    {
+        // Abort if not found.
+        abort_if($link == null, 404);
+
+        return $link;
+//        return $link->code;
     }
 }

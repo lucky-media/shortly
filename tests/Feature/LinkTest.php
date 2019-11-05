@@ -39,6 +39,24 @@ class LinkTest extends TestCase
     }
 
     /** @test */
+    public function user_can_view_stats_for_generated_url()
+    {
+        $link = factory('App\Link')->create();
+
+        $this->get("/{$link->code}/stats")
+             ->assertStatus(200);
+    }
+
+    /** @test */
+    public function abort_if_the_stats_for_url_is_wrong()
+    {
+        $link = factory('App\Link')->create();
+
+        $this->get("/randomurl/stats")
+            ->assertStatus(404);
+    }
+
+    /** @test */
     public function abort_if_the_url_is_wrong()
     {
         $this->get('/randomurl')

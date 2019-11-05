@@ -40,6 +40,5 @@ class LinksController extends Controller
         abort_if($link == null, 404);
 
         return $link;
-//        return $link->code;
     }
 }

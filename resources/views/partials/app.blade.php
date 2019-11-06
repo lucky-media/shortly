@@ -27,6 +27,8 @@
     <div class="bg-lines h-screen bg-grey-100">
         @yield('content')
     </div>
+
+    @stack('scripts')
 </body>
 
 </html>

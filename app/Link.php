@@ -30,6 +30,18 @@ class Link extends Model
 
 
     /**
+     * Return the full generated path.
+     *
+     *
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     */
+    public function fullPath()
+    {
+        return url($this->code);
+    }
+
+
+    /**
      * We override the default Laravel
      * id with the code.
      *

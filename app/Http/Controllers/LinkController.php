@@ -20,7 +20,7 @@ class LinksController extends Controller
             'code' => substr(md5(uniqid(rand(), true)), 0, 6),
         ]);
 
-        return view('home.show', compact('link'));
+        return $link;
     }
 
     public function view(Link $link)

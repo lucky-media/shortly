@@ -29,7 +29,7 @@ class LinkTest extends TestCase
     /** @test */
     public function user_can_view_shortened_url()
     {
-        // $this->withoutExceptionHandling();
+
         $link = factory('App\Link')->create();
 
         $this->post('/link', $link->toArray());
@@ -44,7 +44,7 @@ class LinkTest extends TestCase
         $link = factory('App\Link')->create();
 
         $this->get("/{$link->code}/stats")
-             ->assertStatus(200);
+             ->assertSee($link->fullpath());
     }
 
     /** @test */

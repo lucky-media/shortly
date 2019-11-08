@@ -20,7 +20,7 @@ class LinksController extends Controller
             'code' => substr(md5(uniqid(rand(), true)), 0, 6),
         ]);
 
-        return $link;
+        return view('home.show', compact('link'));
     }
 
     public function view(Link $link)
@@ -39,6 +39,6 @@ class LinksController extends Controller
         // Abort if not found.
         abort_if($link == null, 404);
 
-        return $link;
+        return view('home.stats', compact('link'));
     }
 }

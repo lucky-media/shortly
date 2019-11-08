@@ -21,7 +21,7 @@
 <body class="font-sans">
     <div class="bg-white absolute top-0 right-0 left-0">
         <div class="container mx-auto flex items-center h-20 lg:h-16 px-5 lg:px-0">
-            <div class="text-2xl text-grey-400">shortly</div>
+            <a href="/" class="text-2xl text-grey-400">shortly</a>
         </div>
     </div>
     <div class="bg-lines h-screen bg-grey-100">

@@ -15,5 +15,5 @@ Route::get('/', 'HomeController');
 
 // Links Routes
 Route::post('/link', 'LinksController@store')->name('link.store');
-Route::get('/{link}', 'LinksController@view');
-Route::get('/{link}/stats', 'LinksController@show');
+Route::get('/{link}', 'LinksController@view')->name('link.view');
+Route::get('/{link}/stats', 'LinksController@show')->name('link.show');

@@ -1,9 +1,9 @@
 <template>
-    <div class="w-full h-12 rounded-lg bg-grey-100 p-4 inline-flex items-center mb-4 lg:h-16 lg:rounded-none lg:rounded-l-lg lg:w-4/5 lg:mb-0">
+    <div class="w-full h-12 rounded-lg bg-grey-100 p-4 inline-flex items-center mb-4 border-2 border-transparent focus-within:border-blue-500 lg:h-16 lg:rounded-none lg:rounded-l-lg lg:w-4/5 lg:mb-0">
         <icon name="link" class="fill-current h-8 w-8 text-grey-700 mr-4"/>
         <input ref="input"
             class="appearance-none w-full bg-transparent h-16 placeholder-grey-700 text-grey-700 font-semibold outline-none"
-            :placeholder="placeholder" :type="type" @input="$emit('input', $event.target.value)">
+            :placeholder="placeholder" :value="value" :type="type" @input="$emit('input', $event.target.value)">
     </div>
 </template>
 
@@ -15,6 +15,7 @@
         },
         props: {
             placeholder: String,
+            value: String,
             type: {
                 type: String,
                 default: 'text'
